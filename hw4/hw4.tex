@@ -1,0 +1,112 @@
+\documentclass[11pt]{amsart}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx, txfonts} %txfonts makes the letters sharp
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{epstopdf}
+\usepackage{hyperref}
+\usepackage{amsthm, amssymb, amsfonts, amsmath, enumerate}
+\usepackage{mathrsfs} %Needed for \mathscr
+\usepackage{relsize}%, xfrac} % for resizing in math mode
+
+
+\begin{document}
+
+\title[CS/MATH 335 HW 2]{CS/MATH 335: Probability, Computing, and Graph Theory \\ Homework 5\\ Due in class Monday, October 17, 2016}
+\maketitle
+
+{Taylor Heilman and Matt Iammarino}
+
+\textbf{Partner Problems}
+
+Roughly in order of difficulty
+
+\begin{enumerate}
+
+\item \fbox{\parbox{\textwidth}{
+Mitzenmacher 1.25}} 
+{
+
+}
+
+\item \fbox{\parbox{\textwidth}{
+Mitzenmacher 5.7
+}}
+
+{
+
+
+
+
+
+}
+
+\item \fbox{\parbox{\textwidth}{
+Mitzenmacher 5.2 
+
+}}
+
+{
+
+
+}
+\item \fbox{\parbox{\textwidth}{
+Mitzenmacher 5.3 
+}}
+
+{
+
+}
+\end{enumerate}
+
+\noindent \textbf{Individual Problems}
+\begin{enumerate}
+
+\item[(5)] \fbox{\parbox{\textwidth}{
+Mitzenmacher 1.24
+
+}} 
+
+{
+
+\begin{center}
+ \begin{tabular}{||c | c | c | c | c||} 
+ \hline
+   & Edges & Max Deg & Min Degree & Av. Deg  \\ [0.5ex] 
+ \hline\hline
+ $N_n$ & 0 & 0 & 0 & 0 \\ 
+ \hline
+ $P_n (n>2)$ & $n$-1 & 2 & 1 & $\frac{2(n-1)}{n}$ \\
+ \hline
+ $C_n (n>2)$ & $n$ & 2 & 2 & 2 \\
+ \hline
+ $K_n (n>2)$ & $\frac{n(n-1)}{2}$ & $n-1$ & $n-1$ & $n-1$\\
+ \hline
+ $K_{n,n} (n>1)$& $n^2$ & $n$ & $n$ & $n$ \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
+In regards to $P_n, C_n$ and $K_n$, if $n$= 2 then there is only 1 edge and the max, min and average degree is 1. If $n$ = 1 or 0, then there are no edges and the max, min and average degree is 0. For $K_{n,n}$, if $n$=1 then there is only 1 edge and the max, min and average degree is 1. If $n$=0 then there are 0 edges and the max, min and average degree is 0. \newline
+
+(Assuming all graphs have the same number of nodes) A subgraph is made by simply removing edges from the initial graph,  thus it is clear to see that $N_n$ is a subgraph of all the other graphs since removing all edges from any graph will get you $N_n$
+
+$P_n$ is  a subgraph of $C_n, K_n, K_{n,n}$.  Removing any edge from $C_n$ gets you $P_n$.  Since $K_n$ has every edge possible we can obtain $P_n$ by removing the edges to create a path on $n$ nodes.  You can also obtain $P_n$ from $K_{n,n}$  by removing the proper edges.
+
+$C_n$ is a subgraph of $K_n$ and $K_{n,n}$. Since $K_n$ has every edge possible we can obtain $C_n$ by removing the edges to create a cycle on $n$ nodes.  We can also obtain $C_n$ from $K_{n,n}$ by removing the proper edges.
+
+$K_{n,n}$ is a subgraph of $K_n$. Since $K_n$ is maximally connected we can obtain $K_{n,n}$ by removing the proper edges.
+
+Lastly, $K_n$ is only a subgraph of itself since it is maximally connected. \newline
+
+For any of the above graphs, excluding $N_n$, if $n = 2$ then its compliment is $N_n$. This is because there will only be one edge connecting 2 nodes, so the compliment of that graph is $N_2$.
+
+The compliment of $N_n$ is $K_n$ (and vice versa) because $N_n$ has no edges while $K_n$ is maximally connected.  
+
+$C_3$'s compliment is $N_3$
+}
+
+
+\end{enumerate}
+
+\end{document}

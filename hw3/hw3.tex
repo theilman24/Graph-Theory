@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\graphicspath{ {GraphTheory/ } }
+ 
+
+
+\pagestyle{headings} \thispagestyle{empty}
+%\pagestyle{empty}
+  \textwidth      6.4in
+      \oddsidemargin 0.0in
+      \topmargin     -0.4in
+      \topskip          0pt
+      \headheight      12pt
+      \footskip        18pt
+%      \footheight      12pt
+      \textheight     650pt
+
+\parindent=0cm
+\baselineskip=2cm
+
+%\include these lines if you want to use the LaTeX "theorem" environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{guess}{Conjecture}
+\newtheorem{example}[theorem]{Example}
+
+%include lines like this if you want to define your own commands
+%to save typing
+\newcommand{\PROOF}{\noindent {\bf Proof}: }
+\newcommand{\REF}[1]{[\ref{#1}]}
+\newcommand{\Ref}[1]{(\ref{#1})}
+\newcommand{\dt}{\mbox{\rm   dt}}
+\newcommand{\qed}{\Large{\bf{$\diamond$}}}
+\newcommand{\phat}{\hat{p}}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+%\setstretch{1.5}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+
+\textbf{Name: Taylor Heilman}    \hspace{4in} 
+\begin{center} \textbf{CS 275: Spring 2016} \end{center}
+
+
+{Problem 8.
+
+$\Leftarrow$  Let graph $G$ have 1 vertex and 0 edges.  By definition graph G is acyclic. 
+
+Notice that any connected graph has $t$ vertices and $t-1$ edges, where $t \in \Z$.  Accordingly the sum of all vertex degrees in $G$ = 2(E(G)) = 2(V(G))-2. Therefore there exists a vertex with a degree < 2.  Similarly a vertex's degree can't = 0 or else the graph would be disconnected, so the degree = 1. Consider the graph $G-v$.  $G-v$ has $V(G)-1$ vertices and $E(G)-1 = V(G)-2$ edges.  By the induction hypothesis it is acyclic. Adding $v$ to $G-v$ can't create a cycle because the cycle would traverse $v$'s edge twice. Therefore G is acyclic.
+
+
+$\Rightarrow$ Let graph $G$ have 1 vertex, this means there is at most 0 edges.  By definition graph G is acyclic. 
+
+Consider an acyclic connected graph with more than 1 vertices.  If we choose a random vertex $v_0$ and follow a path($v_1,v_2$..) by picking a vertex $v_{i+1}$ that is adjacent to vertex $v_i$ and is not already in the path. This path will end at some vertex $v_k$. If $v_k$ is adjacent to some vertex $v_t$ where $v_t \neq v_{k-1}$ then a cycle has been discovered. Also, if $v_k$ has an adjacent vertex that isn't in the path, then the path wouldn't have ended at $v_k$ it would have ended at $v_{k+1}$ So $v_k$ is adjacent to only $v_{k-1}$ and therefore has a degree of 1.  By removing $v_k$ to form $G-v_k$ which is an acyclic graph with V(G)-1 vertices and E(G)-1 edges.  By the induction hypothesis we have E(G)-1 = V(G)-2 which means the connected acyclic graph G has edges = V(G)-1
+
+
+}
+
+
+
+{Problem 10.
+
+$\Leftarrow$ Let $T$ be a tree. By definition it is connected (any 2 vertices are joined by at least one path)
+
+If any 2 vertices, $u and q$ of $T$ are joined by 2 or more paths then a cycle is produced.
+
+This creates a contradiction with the definition of a tree.
+
+$\Rightarrow$ Let $T$ be a graph where any 2 vertices are connected by a unique path.
+
+Thus $T$ is connected. However, for any 2 vertices,if a cycle contains $u and q$ then $u,q$ are connected by more than 1 path.  This produces a contradiction.
+
+
+
+
+
+}
+
+
+{
+
+Problem 15.
+
+If a graph G has $n$ vertices and $n-1$ edges it does not have to be a tree.  For a Graph to be a tree it must be connected and acyclic.  If graph G has $n-1$ edges while also being connected, it is impossible for G to be cyclic.  However, simply being acyclic does not make Graph G a tree.  Graph G still must connected and since the question only defines graph G as having $n$ vertices and $n-1$ edges we cannot make any assumptions of G being connected. The image below shows a graph that has 5 vertices and 4 edges.  This graph is disconnected and cyclic therefore it is not a tree and proves that a graph having $n$ vertices and $n-1$ edges does not make that graph a tree.
+
+\includegraphics[scale=.25]{notTree}
+
+}
+
+{
+Problem 24.
+
+Assume we have a nontrivial tree $G$
+By definition of a tree, every vertex,$v$ in $G$ has one unique path to every other vertex, $q$ in $G$
+By deleting any edge in the path $(v,q)$, vertex $v$ and every vertex it still has a path to is no longer connected to vertex $q$ and every vertex it still has a path to.
+Therefore there are now exactly 2 separate components after the deletion of any edge in graph $G$
+
+}
+
+
+
+
+\end{document}
+
+

@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\graphicspath{ {GraphTheory/ } }
+ 
+
+
+\pagestyle{headings} \thispagestyle{empty}
+%\pagestyle{empty}
+  \textwidth      6.4in
+      \oddsidemargin 0.0in
+      \topmargin     -0.4in
+      \topskip          0pt
+      \headheight      12pt
+      \footskip        18pt
+%      \footheight      12pt
+      \textheight     650pt
+
+\parindent=0cm
+\baselineskip=2cm
+
+%\include these lines if you want to use the LaTeX "theorem" environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{guess}{Conjecture}
+\newtheorem{example}[theorem]{Example}
+
+%include lines like this if you want to define your own commands
+%to save typing
+\newcommand{\PROOF}{\noindent {\bf Proof}: }
+\newcommand{\REF}[1]{[\ref{#1}]}
+\newcommand{\Ref}[1]{(\ref{#1})}
+\newcommand{\dt}{\mbox{\rm   dt}}
+\newcommand{\qed}{\Large{\bf{$\diamond$}}}
+\newcommand{\phat}{\hat{p}}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand\ceil[1]{\lceil#1\rceil}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+%\setstretch{1.5}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+
+
+\textbf{Name: Taylor Heilman }    \hspace{4in} 
+\begin{center} \textbf{CS 275: Spring 2016} \end{center}
+
+
+{
+1.  Prove that if $H$ is a subgraph of $G$, then $\chi(H) \leq \chi(G)$.
+
+Let $G$ be a graph where $\chi(G) = k$, let $H$ be a subgraph of $G$.  Hence there is a proper vertex coloring of $G$ using $k$ colors.  Since $H$ is a subgraph of $G$, let any vertex $u \in H$ have the same coloring as vertex $u \in G$.  Therefore $H$ has a proper coloring using $k$.   Since $|E(H)|  \leq |E(G)|$ it implies that $\chi(H) \leq k$. Notice that a proper coloring means no two adjacent vertices are labeled the same color. $\chi(H) \leq \chi(G)$ is true because the removal of edges in $G$ to create the subgraph $H$ means that for some vertex $v \in H, N(v) \leq$  $N(v)  \in G$. The fewer amount of adjacent vertices to $v$ means there are less colors $v$ can't be colored, meaning less colors will be used to color the graph.
+
+}
+
+{
+2. Prove that if $H$ is a subgraph of $G$, then $\chi_1(H) \leq \chi_1(G)$.
+
+Let $G$ be a graph where $\chi_1(G) = k$, let $H$ be a subgraph of $G$.  Hence there is a proper edge coloring of $G$ using $k$ colors. To produce a $k$ edge coloring in $H$ simply color any $u,v$ edge $\in H$ the same color as the $u,v$ edge $\in$ $G$.  Therefore the maximum value $\chi_1(H)$ can have is $k = \chi_1(G)$. Since $H$ is a subgraph of $G, |E(H)|  \leq |E(G)|$. This implies $\chi_1(H) \leq \chi_1(G)$.  Notice that proper edge coloring of G means no two adjacent edges are colored the same. Since $H$ was created by the removal of edges $\in G$, for any edge in $H$ the number of adjacent edges is $\leq$ the amount of adjacent edges of the corresponding edge in $G$. Since there are $\leq$ adjacent edges in $H$ compared to $G$, the edges in $H$ have less restrictions on what color they can be labeled, the restrictiveness means that $H$ may be able to be colored in less colors than $G$.  Hence $\chi_1(H) \leq \chi_1(G)$ is true.
+
+}
+
+{
+3. How many ways are there to partition $V(G)$ if G has four vertices? five? six?
+
+To find the amount of possible partitions on four vertices, I broke it down into number of sets partitioned, and then how many way four vertices could be distributed with the amount of sets given.  For example, on four vertices there are four different ways to partition, each way having a different amount of sets. So the first way is to have 4 sets, each containing 1 vertex.  The next way is to have 3 sets, with 1 set containing 2 vertices and the remaining sets containing 1 vertex each.  When there are 2 sets forming the partition, 2 possibilities arise. The first possibility is to have 2 sets with 2 vertices in each, the next is to have one set with 3 vertices and the other with 1 vertex.  And lastly the final possibility is 1 set of all 4 vertices. This gives a total of 5 different partitions.
+
+I repeated this on 5 vertices. 5 vertices totaled to have 7 different ways of partitioning: (first number refers to the number of sets used to partition, the second number refers to amount of way to fill said sets with the amount of vertices given) 5-1, 4-1, 3-3, 2-2, 1-1. 
+ 
+ Lastly I did this using 6 vertices and found a total of 11 ways to partition 6 vertices: 6-1 ,5-1 ,4-2 , 3-3, 2-3, 1,1.
+ 
+ I tried to find the amount of partitions on 7 vertices and found 15 different ways to partition. This outcome made me think that for every extra vertex added, 4 more ways of partitioning is possible.  
+
+
+
+}
+
+
+
+
+\end{document}
